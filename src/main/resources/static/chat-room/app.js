@@ -1,0 +1,1 @@
+angular.module("messengerApp", [ "messengerApp.controllers", "messengerApp.services" ]);
