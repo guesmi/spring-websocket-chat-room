@@ -16,5 +16,6 @@ public class Message {
 	private int id;
 
 	private String text;
+	private String user;
 
 }
