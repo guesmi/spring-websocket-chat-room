@@ -2,7 +2,9 @@ angular.module("messengerApp.controllers", []).controller("messengerCtrl",
 	function($scope, messageService) {
 
 	    $scope.newMsg;
-	    
+	    messageService.getHellos().then(function(result) {
+		    $scope.hellos = result.data;
+		})
 	    $scope.makeId = function()
 		{
 		    var text = "";

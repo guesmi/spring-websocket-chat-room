@@ -21,6 +21,16 @@ angular.module("messengerApp.services", [ "ngResource" ]).factory(
 			    });
 
 		    return deferred.promise;
+		},
+		getHellos : function() {
+		    var deferred = $q.defer();
+		    var promise = $http.get('/hello')
+			    .then(function(data) {
+
+				deferred.resolve(data);
+			    });
+
+		    return deferred.promise;
 		}
 	    }
 	});

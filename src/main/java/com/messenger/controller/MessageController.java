@@ -1,5 +1,6 @@
 package com.messenger.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,14 @@ public class MessageController {
 	@Autowired
 	SimpMessagingTemplate template;
 
+	
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<String>> hellos() {
+		List<String> response = Arrays.asList("hello", "yeddek fi zebi");
+		return new ResponseEntity<List<String>>(response, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "/message", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<Message>> findAll() {
